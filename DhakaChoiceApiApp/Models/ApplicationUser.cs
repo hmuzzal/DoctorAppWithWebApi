@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Server.Kestrel.Core.Features;
 
@@ -11,5 +12,5 @@ namespace DhakaChoiceApiApp.Models
         [DataType(DataType.PhoneNumber)]
         public override string PhoneNumber { get; set; }
 
-    }
+     }
 }

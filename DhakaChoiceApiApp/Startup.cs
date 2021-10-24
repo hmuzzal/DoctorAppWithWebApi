@@ -91,10 +91,14 @@ namespace DhakaChoiceApiApp
 
             });
 
-            OAuthOptions = new OAuthAuthorizationServeroptions
-            {
+            //OAuthOptions = new OAuthAuthorizationServerOptions
+            //{
+            //    TokenEndpointPath = new Microsoft.Owin.PathString("/Token"),
+            //    Provider = new OAuthAuthorizationServerProvider(PublicClientId)
+            //    AuthorizeEndpointPath = new Microsoft.Owin.PathString("/api/Account/ExternalLogin"),
 
-            }
+
+            //};
 
             app.UseHttpsRedirection();
             app.UseRouting();
