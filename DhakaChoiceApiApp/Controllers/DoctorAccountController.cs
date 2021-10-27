@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using DhakaChoiceApiApp.Data;
 using DhakaChoiceApiApp.DTOs;
 using DhakaChoiceApiApp.Models;
-using DhakaChoiceApiApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -31,7 +30,7 @@ namespace DhakaChoiceApiApp.Controllers
         [AllowAnonymous]
         [Route("Register")]
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterUserDto model)
         {
             if (!ModelState.IsValid)
             {
@@ -45,17 +44,17 @@ namespace DhakaChoiceApiApp.Controllers
             if (!result.Succeeded)
             {
                 return BadRequest(result);
-            }
-
+            }   
             await _userManager.AddToRoleAsync(user, "Doctor");
-
-            return Ok();
+            return Ok();    
         }
 
 
 
+        [AllowAnonymous]
         [HttpPost]
-        public string Login([FromBody] ApplicationUserDto user)
+        [Route("Login")]
+        public string Login([FromBody] LoginUserDto user)
         {
             if (!ModelState.IsValid) return JsonConvert.SerializeObject("Invalid login attempt.");
             var authorizeUser =  _userManager.Users.FirstOrDefault(x => x.UserName == user.UserName);

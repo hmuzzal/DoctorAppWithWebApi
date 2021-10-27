@@ -23,6 +23,8 @@ namespace DhakaChoiceDoctorApp.ViewModels
             {
                 return new Command(async () =>
                 {
+                    if(Password != ConfirmPassword)
+                        await Application.Current.MainPage.DisplayAlert("Error", "Password doesn't match", "Ok");
                     await _registerService.RegisterAsync(PhoneNumber, Password, ConfirmPassword);
                 });
             }

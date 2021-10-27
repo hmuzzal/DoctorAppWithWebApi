@@ -22,4 +22,4 @@ namespace DhakaChoiceDoctorApp.Views
             Navigation.PushAsync(new LoginPage());
         }
     }
-}
+}   

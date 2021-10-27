@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DhakaChoiceApiApp.ViewModels
+namespace DhakaChoiceApiApp.DTOs
 {
-    public class RegisterViewModel
+    public class RegisterUserDto
     {
         [Required]
         [Phone]
@@ -24,7 +24,5 @@ namespace DhakaChoiceApiApp.ViewModels
         [StringLength(20, ErrorMessage = "Password Must be between 5 and 20 characters", MinimumLength = 5)]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
-
-
     }
 }

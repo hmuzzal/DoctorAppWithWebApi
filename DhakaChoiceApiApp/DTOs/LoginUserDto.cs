@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DhakaChoiceApiApp.DTOs
 {
-    public class ApplicationUserDto
+    public class LoginUserDto
     {
         public string UserName { get; set; }
 

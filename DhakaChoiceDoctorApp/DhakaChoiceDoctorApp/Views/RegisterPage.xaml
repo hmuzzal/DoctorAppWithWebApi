@@ -9,7 +9,7 @@
     <StackLayout Orientation="Vertical">
         <Entry Text="{Binding PhoneNumber}" Placeholder="Phone Number"/>
         <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="true"/>
-        <Entry Text="{Binding ConfirmPassword}" Placeholder="Confirm Password" IsPassword="true"/>
+        <Entry Text="{Binding ConfirmPassword}" Placeholder="Confirm Password" IsPassword="true"></Entry>
         <Button Command="{Binding RegisterCommand}" Text="Register"/>
         <Label Text="{Binding Message}"/>
         <Button Text="Go To Login Page"
